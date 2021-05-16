@@ -1,3 +1,3 @@
 # TestesEConfiabilidade
 
-Integrantes do grupo: Rafael Silva e Clodoaldo
+Integrantes do grupo: Rafael Camargo da Silva e Clodoaldo de Borba Lambiase
