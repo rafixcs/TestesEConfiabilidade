@@ -6,13 +6,25 @@
 
 int payment(float value, char status[15]) {
 
-    if (value <= 0.009f || value >= 10000.0f) {
+char str1[15];
+char str2[15];
+char str3[15];
+char str4[15];
+
+strcpy(str1, "regular");
+strcpy(str2, "estudante");
+strcpy(str3, "aposentado");
+strcpy(str4, "VIP");
+/*
+	printf("Status=> %s",status);
+	printf("Status retorno=> %d",strcmp(str2, status)); */
+    if (value < 0.01f || value > 99999.0f) {
         return 1;
     } else if(
-        !(strcmp("regular", &status)) ||
-        !(strcmp("estudante", &status)) ||
-        !(strcmp("aposentado", &status)) ||
-        !(strcmp("VIP", &status))) {
+        (strcmp(str1, status)!=0) &&
+        (strcmp(str2, status)!=0) &&
+        (strcmp(str3, status)!=0) &&
+        (strcmp(str4, status)!=0)) {
             return 2;
     } else {
         return 0;

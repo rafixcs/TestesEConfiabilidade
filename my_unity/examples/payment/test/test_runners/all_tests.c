@@ -1,7 +1,7 @@
 #include "unity_fixture.h"
 
 static void RunAllTests(void) {
-    RUN_TEST_GROUP(sort);
+    RUN_TEST_GROUP(payment);
 }
 
 int main(int argc, const char **argv) {

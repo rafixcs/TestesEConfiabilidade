@@ -15,18 +15,46 @@ TEST_TEAR_DOWN(payment){
 
 }
 
-TEST(payment, Testpayment1){
-    
+TEST(payment, TestPayment1){
+    float v=1;
+    char s[]="regular";
+    //printf("\n Resultado1=> %d \n",payment(v,s));
+    TEST_ASSERT((payment(v,s)==0) ? 1:0);
 }
 
-TEST(payment, Testpayment2) {
-    
+TEST(payment, TestPayment2) {
+    float v=0;
+    char s[]="estudante";
+    //printf("\n Resultado1=> %d \n",payment(v,s));
+    TEST_ASSERT((payment(v,s)==0) ? 1:0);
 }
 
-TEST(payment, Testpayment3) {
-    
+TEST(payment, TestPayment3) {
+    float v=9;
+    char s[]="apo sentado";
+    TEST_ASSERT((payment(v,s)==0) ? 1:0);
 }
 
-TEST(payment, Testpayment4) {
-    
+TEST(payment, TestPayment4) {
+    float v=100000;
+    char s[]="VIP";
+    TEST_ASSERT((payment(v,s)==0) ? 1:0);    
 }
+
+TEST(payment, TestPayment5) {
+    float v=9;
+    char s[16]="abcdefghijlmnopq";
+    TEST_ASSERT((payment(v,s)==0) ? 1:0);    
+}
+
+/*
+TEST(payment, TestPayment6) {
+
+    char s[]="aposentado";
+    TEST_ASSERT((payment("a",s)==0) ? 1:0);
+}
+
+TEST(payment, TestPayment7) {
+
+    TEST_ASSERT((payment(13,2021)==0) ? 1:0);
+} */

@@ -2,8 +2,9 @@
 #include "unity_fixture.h"
 
 TEST_GROUP_RUNNER(payment) {
-    RUN_TEST_CASE(payment, TestSort1);
-    RUN_TEST_CASE(payment, TestSort2);
-    RUN_TEST_CASE(payment, TestSort3);
-    RUN_TEST_CASE(payment, TestSort4);
+    RUN_TEST_CASE(payment, TestPayment1);
+    RUN_TEST_CASE(payment, TestPayment2);
+    RUN_TEST_CASE(payment, TestPayment3);
+    RUN_TEST_CASE(payment, TestPayment4); 
+    RUN_TEST_CASE(payment, TestPayment5); 
 }
