@@ -4,6 +4,9 @@
 
 #include <stdlib.h>
 #include <string.h>
+#include <setjmp.h>
+
+static jmp_buf s_jumpBuffer;
 
 TEST_GROUP(payment);
 
@@ -47,14 +50,17 @@ TEST(payment, TestPayment5) {
     TEST_ASSERT((payment(v,s)==0) ? 1:0);    
 }
 
-/*
+
 TEST(payment, TestPayment6) {
 
     char s[]="aposentado";
-    TEST_ASSERT((payment("a",s)==0) ? 1:0);
+    TEST_ASSERT((payment(strtod("a", NULL),s)==0) ? 1:0);
 }
 
 TEST(payment, TestPayment7) {
-
-    TEST_ASSERT((payment(13,2021)==0) ? 1:0);
-} */
+    if(setjmp(s_jumpBuffer)) {
+        TEST_ASSERT((payment(13,2021)==0) ? 1:0);
+    } else {
+        TEST_ASSERT(0);
+    }
+}
